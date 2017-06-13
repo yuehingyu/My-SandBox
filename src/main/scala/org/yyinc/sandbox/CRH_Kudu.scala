@@ -63,11 +63,7 @@ object CRH_Kudu {
     
     spark.sql("CREATE TABLE customer_complaint STORED AS ORC  AS SELECT * from my_temp_table_view")
     
-    
-    
-    spark.sql("INSERT INTO customer_complaint_v2 SELECT company,complaint_id,timely_response from my_temp_table_view")
-    
-    
+
     spark.sql("select * from customer_complaint").show()
     
     
@@ -124,7 +120,6 @@ TBLPROPERTIES ("transactional"="true",
     
     printf("Total rows : "+count)
    
-    
     
       
   }
