@@ -84,9 +84,9 @@ object CRH_Kudu {
     
  
    
-    val client = new KuduClient.KuduClientBuilder("10.0.0.8:7051").build();
+   // val client = new KuduClient.KuduClientBuilder("10.0.0.8:7051").build();
    
-    client.getTablesList()
+    //client.getTablesList()
 
    
   }
