@@ -10,19 +10,6 @@ import org.apache.spark.sql.types._
 import org.apache.log4j.Logger
 import org.apache.log4j.Level
 
-import org.apache.kudu.spark.kudu._
-import org.apache.kudu.client._
-import collection.JavaConverters._
-
-
-// kudu client 
-import org.apache.kudu.ColumnSchema;
-import org.apache.kudu.Schema;
-import org.apache.kudu.Type;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 
 object CRH_Kudu {
@@ -56,6 +43,9 @@ object CRH_Kudu {
     
     complaintDF.show()
     
+    
+    // this column does not shown when using spark-shell complaintDF.drop("_corrupt_record")
+    
     complaintDF.printSchema()
 
     complaintDF.createOrReplaceTempView("my_temp_table_view")
@@ -82,11 +72,7 @@ object CRH_Kudu {
     
     printf("Total row : "+summaryResult.count())
     
- 
-   
-   // val client = new KuduClient.KuduClientBuilder("10.0.0.8:7051").build();
-   
-    //client.getTablesList()
+
 
    
   }
